@@ -4,7 +4,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body d-flex justify-content-between">
-                    <h4 class="text-start">list product</h4>
+                    <h4 class="text-start">list Toko</h4>
                     <a href="{{ route('toko.create') }}" class="btn btn-primary btn-sm float-right font-weight-bolder mr-1"><i class="ni ni-fat-add"></i>Tambah Data</a>
                 </div>
             </div>
@@ -49,6 +49,20 @@
                                                 href="{{ route('toko.index', $data->nama) }}"><i data-feathers='eye'
                                                     class="font-small-1 mr-1"></i>Show</a>
                                             </li>
+                                            <li><a class="dropdown-item font-small-1"
+                                                href="{{ route('toko.edit', $data->id) }}"><i data-feathers='eye'
+                                                    class="font-small-1 mr-1"></i>Edit</a>
+                                            </li>
+                                            <form action="{{ route('toko.destroy', $data->id)}}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <li><button type="submit"
+                                                    class="dropdown-item fomt-small-1 btn-delete"><i
+                                                    data-feather='trash-2'
+                                                    class="font-small-1 mr-1"></i>Delete</button>
+                                                </li>
+                                            </form>
+
                                         </ul>
                                     </div>
                                 </td>

@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TokoController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\Auth\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,7 +36,25 @@ Route::get('/dashboardUser', function () {
     return view('dashboard-user');
 });
 
-Route::get('toko', [TokoController::class, 'index'])->name('toko.index');
-Route::get('toko-create', [TokoController::class, 'create'])->name('toko.create');
-// Route::resource('toko', TokoController::class);
-Route::post('toko-store', [TokoController::class, 'store'])->name('toko.store');
+
+// Route::get('toko-index', [TokoController::class, 'index'])->name('toko.index');
+// Route::get('toko-create', [TokoController::class, 'create'])->name('toko.create');
+Route::resource('toko', TokoController::class);
+// Route::post('toko-store', [TokoController::class, 'store'])->name('toko.store');
+// Route::delete('toko-destroy', [TokoController::class, 'destroy'])->name('toko.destroy');
+
+// Route::get('register', [RegisterController::class, 'register'])->name('register.register');
+
+Route::resource('product', ProductController::class);
+
+
+
+// Route::get('/admin',[AuthController::class, 'login'])->name('login');
+
+Route::get('/admin', function () {
+    return view('auth.login');
+});
+
+Route::post('/postlogin', [AuthController::class, 'postlogin'])->name('postLogin');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+

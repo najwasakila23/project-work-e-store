@@ -4,7 +4,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body d-flex justify-content-between">
-                    <h4 class="text-start">Create product</h4>
+                    <h4 class="text-start">Tambahkan Toko</h4>
                     <a href="{{ route('toko.index') }}" class="btn btn-secondary btn-sm float-right font-weight-bolder mr-1"><i class="ni ni-bold-left"></i>Back</a>
                 </div>
             </div><br>
@@ -24,7 +24,7 @@
                             </div>
                             <div class="mb-1">
                                 <label class="form-label">No.Telepon</label>
-                                <input type="integer" class="form-control" placeholder="Email" name="notelp">
+                                <input type="bigInteger" class="form-control" placeholder="08387773707" name="noTelp">
                             </div>
                         </div>
                         <div class="col-md-6 col-6">
@@ -38,7 +38,7 @@
                             </div>
                             <div class="mb-1">
                                 <label class="form-label">Alamat</label>
-                                <input type="integer" class="form-control" placeholder="rt02/03 15B" name="address">
+                                <input type="text" class="form-control" placeholder="rt02/03 15B" name="address">
                             </div>
                         </div>
                     </div>
